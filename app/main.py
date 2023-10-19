@@ -20,6 +20,6 @@ async def question(quest: Quest):
     response = httpx.get(f"https://jservice.io/api/random?count={quest.questions_num}")
     for quest in response.json():
         question_id = quest.get("id")
-        question = quest.get()
-        answer = quest.get()
+        question = quest.get("question")
+        answer = quest.get("answer")
     return response.json
